@@ -32,3 +32,4 @@ if (typeof unknowVar === 'boolean') {
 const parse = (str:string):unknown=>{
   return JSON.parse(str);
 }
+console.log(unknowVar);
