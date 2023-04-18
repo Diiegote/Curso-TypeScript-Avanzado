@@ -13,5 +13,12 @@ export interface updateProductDto extends Partial<CreateProductDto>{};
 type example2 = Required<Product>;
 
 // el Readonly es para que los campos sean solo de lectura y no se puedan modificar, esto lo usamos cuando solo queremos buscar un elemento pero no queremos que lo modifiquen
-export interface FindProductDto extends  Readonly<Partial<Product>>{};
+
+// export interface FindProductDto extends  Readonly<Partial<Product>>{};
+
+// esto es la misma interface de la linea 17 solo que le agregamos un campo mas que es Omit para omitir los tags y le agregamos un nuevo tipado diciendo que va a ser de solo lectura y mas profundamente le decimos que va a ser un array de string pero de solo lecutra tambien con el ReadonlyArray.
+// porque hacemos esto? anda a ver el archivo product.service.
+export interface FindProductDto extends  Readonly<Partial<Omit<Product,'tags'>>>{
+  readonly tags: ReadonlyArray<string>;
+};
 

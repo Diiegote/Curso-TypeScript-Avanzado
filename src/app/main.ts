@@ -27,7 +27,8 @@ updateProduct(product.id,{
 findProducts({
   stock:10,
   color:'red',
-  createdAT: new Date()
+  createdAT: new Date(),
+  tags:['fd']
 })
 
 
